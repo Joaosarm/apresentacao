@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Manipulação de DOM</title>
+</head>
+
+<body>
+
+    <section class='DOM'>
+        <h1>O que é DOM?</h1>
+        <ul>
+            <li>- DOM - Document Object Model - é uma interface de programação que representa o conteúdo da página para
+                que possa ser alterada.</li>
+            <li>- O DOM não é uma linguagem de programação, mas sem ele, o JavaScript não teria acesso ao HTML, ele é
+                usado pelo JavaScript para acessar o documento e seus elementos. </li>
+            <li>- O conteúdo da página é armazenado no DOM e pode ser acessado e manipulado via JavaScript </li>
+            <li>- Todas as propriedades, métodos e eventos disponíveis para manipular e criar páginas da Web são
+                organizados em objetos. </li>
+            <li>~No início, o JavaScript e o DOM estavam fortemente interligados, mas, eventualmente, evoluíram para
+                entidades separadas.~ </li>
+            <li>~O DOM foi projetado para ser independente de qualquer linguagem de programação específica~ </li>
+            <li>----- document.querySelector() -----</li>
+        </ul>
+        <button class="next" onclick="proxConteudo('DOM','windowdocument')"> Próximo ></button>
+    </section>
+
+    <section class='windowdocument escondido'>
+        <h1> O que são os objetos "window" e "document"?</h1>
+        <div class="geral">
+            <ul>
+                <li>- São os objetos mais utilizados</li>
+                <li>- De forma simples, o objeto window representa algo como o browser, e o objeto document é a raiz de
+                    todo
+                    o documento em si.</li>
+                <li>- O objeto window representa uma janela que contém um elemento DOM.</li>
+                <li>- O objeto document representa o documento HTML fonte da página.</li>
+            </ul>
+            <button onclick="openWindow()">window</button>
+            <button onclick="openDocument()">document</button>
+        </div>
+        <div class="window escondido">
+            <ul>
+                <li> - Browser Object Model (BOM) - permite que o JavaScript "converse" com o browser.</li>
+                <h3>Exemplos:</h3>
+                <li onclick="fechar()"> - window.close() - fecha a janela atual</li>
+                <li onclick="abrir()"> - window.open() - abre uma nova janela</li>
+                <li onclick="mover()"> - window.moveTo() - move janela atual</li>
+                <li onclick="resize()"> - window.resizeTo() - reajusta o tamanho da janela</li>
+            </ul>
+            <button onclick="voltar('window','windowdocument')">Voltar</button>
+        </div>
+        <div class="document escondido">
+            <ul>
+                <li> - Document Object Model (DOM) - permite que o JavaScript modifique o código HTML.</li>
+                <h3>Exemplos:</h3>
+                <li> - document.getElementsByClassName(className) - Retorna um vetor de objetos com todos os elementos
+                    que possuem a classe </li>
+                <li> - Document.getElementsByTagName(tagName) - Retorna um vetor de objetos com todos os elementos com a
+                    tag </li>
+            </ul>
+            <button onclick="voltar('document','windowdocument')">Voltar</button>
+        </div>
+        <p></p>
+        <button class="next" onclick="proxConteudo('windowdocument','get')"> Próximo ></button>
+    </section>
+
+    <section class='get escondido'>
+        <h1>getElementById, getElementsByClassName, querySelector ou querySelectorAll?</h1>
+        <ul>
+            <li id="getid" class="getclass">- <strong>getElementById</strong> - Retorna a referência do elemento através
+                do seu ID - O valor desse atributo deve ser único dentro do documento. (Elementos que não estão no
+                documento não são procurados por getElementById. Quando criar um elemento e atribuir um ID ao mesmo,
+                você deve inserir o elemento na árvore do documento)</li>
+            <li class="getclass">- <strong> getElementsByClassName</strong> - Retorna um vetor de objetos com todos os
+                elementos filhos que possuem o nome da classe dada. Funciona apenas com classes.</li>
+            <li class="selector">- <strong> querySelector</strong> - Retorna o primeiro elemento dentro do documento que
+                corresponde ao grupo especificado de seletores. Funciona para qualquer tipo de seletor - id, class,
+                atributo.</li>
+            <li class="selector">- <strong> querySelectorAll</strong> - Funciona como o querySelector, porem retorna uma
+                nodeList com todos os elementos que possuem o seletor procurado (Funciona para quanquer tipo de
+                seletor).</li>
+        </ul>
+        <button onclick="getId()">getElementById</button>
+        <button onclick="getClass()">getElementsByClassName</button>
+        <button onclick="selector()">querySelector</button>
+        <button onclick="selectorAll()">querySelectorAll</button>
+        <p></p>
+        <button class="next" onclick="proxConteudo('get','element')"> Próximo ></button>
+    </section>
+
+    <section class='element escondido'>
+        <h1>O que é um Element no JavaScript?</h1>
+        <ul>
+            <li>- Element é um tipo específico de nó (node.ELEMENT_NODE). É um nó escrito usando uma tag no documento
+                HTML.</li>
+            <h3>Outros tipos de nós:</h3>
+            <li>- Attt - Representa um atributo</li>
+            <li>- Text - Representa conteudo textual em um elemento ou atributo</li>
+            <li>- Comment - Representa um comentário</li>
+        </ul>
+        <button class="next" onclick="proxConteudo('element','inner')"> Próximo ></button>
+    </section>
+
+    <section class='inner escondido'>
+        <h1>innerHTML, innerText ou textContent?</h1>
+        <div>
+            <ul>
+                <li>- innerHTML - Retorna todo o conteúdo HTML escrito dentro do nó buscado exatamente como está
+                    escrito.</li>
+                <li>- innerText - Retorna apenas o texto escrito sem as tags e com espaçamento normal entre cada uma das
+                    palavras, como um texto simples.</li>
+                <li>- textContent - Retorna todo o texto escrito sem as tags mas mantendo o texto e espaçamento
+                    exatamente igual ao achado.</li>
+            </ul>
+            <button onclick="test('inner')">Testar</button>
+            <button class="next" onclick="proxConteudo('inner','node')"> Próximo  ></button>
+        </div>
+        <div class="testeinner escondido">
+            <p id="paragrafo">Esse elemento
+                está espaçado
+                e com um elemento <strong> strong </strong>.
+            </p>
+
+            <button onclick="getinnerText()">Get innerText</button>
+            <button onclick="gettextContent()">Get textContent</button>
+            <button onclick="getinnerHTML()">Get innerHTML</button>
+            <p id="resultado"></p>
+            <button onclick="voltar('testeinner','inner')"> voltar</button>
+            <button class="next" onclick="proxConteudo('inner','node')"> Próximo  ></button>
+        </div>
+    </section>
+
+    <div class="node escondido">
+        <h1>Qual a diferença entre uma NodeList e uma array comum? Como transformar a NodeList em uma array?</h1>
+        <div>
+            <ul>
+                <li> - Objetos NodeList são coleções de nodos semelhantes aos objetos retornados pelos métodos
+                    Node.childNodes e document.querySelectorAll() (Ou seja, coleções de objetos);</li>
+                <li> - O Nodelist é um objeto apenas semelhante a um Array, e por isso métodos específicos para arrays
+                    não funcionarão no NodeList.</li>
+                <li>- A melhor maneira de se transformar uma nodeListe em array é atraves do Array.from(nodeList).</li>
+            </ul>
+
+            <button onclick="test('node')">Testar</button>
+            <button class="next" onclick="proxConteudo('node','create')"> Próximo  ></button>
+        </div>
+        <div class="testeNode escondido">
+            <ul>
+                <li>Sou o primeiro da lista</li>
+                <li>Sou o segundo da lista</li>
+            </ul>
+            <button onclick="mostrarNode()">Mostrar nodeList</button>
+            <p class="mostrarNode"></p>
+            <button onclick="mostrarArray()">Mostrar Array</button>
+            <p class="mostrarArray"></p>
+            <button onclick="manipularListas()">Usar forEach nas listas</button>
+            <button onclick="voltar('testeNode','node')"> voltar</button>
+            <button class="next" onclick="proxConteudo('node','create')"> Próximo  ></button>
+        </div>
+    </div>
+
+    <section class="create escondido">
+        <h1>Como criar elementos via JavaScript com document.createElement e element.appendChild</h1>
+        <div>
+        <ul>
+            <li> - Document.createElement() cria o elemento HTML especificado ou um HTMLUnknownElement se o nome do elemento dado não for conhecido.</li>
+            <li> - Sintaxe --- let elemento = document.createElement(nomeDaTag);</li>
+            <li> - element.appendChild() - Adiciona um nó ao final da lista de um pai especificado</li>
+            <li> - Sintaxe --- let filho = elemento.appendChild(filho);</li>
+        </ul>
+    <button onclick="test('create')">Testar</button>
+        <button class="next" onclick="proxConteudo('create','fim')"> Próximo  ></button>
+    </div>
+    <div class="testeCreate escondido">
+        <ul class="lista">
+            <h3>LISTA:</h3>
+
+        </ul>
+
+        <button onclick="adicionarElemento()">Adicionar elemento</button>
+        <button onclick="voltar('testeCreate','create')"> voltar</button>
+        <button class="next" onclick="proxConteudo('create','fim')"> Próximo  ></button>
+    </div>
+    </section>
+
+    <section class="fim escondido">
+        <h2>FIM</h2>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

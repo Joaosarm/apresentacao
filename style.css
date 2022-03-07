@@ -1,0 +1,79 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(205deg, #2193de 0, #478fde 3.33%, #618cdd 6.67%, #7688da 10%, #8883d5 13.33%, #997fd0 16.67%, #a77ac8 20%, #b376c0 23.33%, #be72b7 26.67%, #c66fad 30%, #ce6ca3 33.33%, #d36a98 36.67%, #d7698d 40%, #d96981 43.33%, #d96a77 46.67%, #d86c6c 50%, #d66f62 53.33%, #d27259 56.67%, #cd7650 60%, #c67a48 63.33%, #bf7e42 66.67%, #b7823d 70%, #ae8639 73.33%, #a58a37 76.67%, #9b8d37 80%, #909139 83.33%, #85943d 86.67%, #799643 90%, #6c994a 93.33%, #5e9b53 96.67%, #4f9d5c 100%);
+    font-size: 23px;
+    font-weight: 500;
+}
+h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 50px;
+    margin-bottom: 40px;
+}
+
+h3{
+    font-size: 26px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+ul{
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+li{
+    margin: 25px;
+}
+
+strong{
+    font-weight: 600;
+}
+
+section{
+    text-align: center;
+}
+
+button{
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    margin: 40px;
+}
+
+button.next{
+    position: absolute;
+    background-color: darkred;
+    right: 5%;
+    bottom: 5%;
+    margin: 0;
+}
+
+.node{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.fim{
+    position: absolute;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40vh;
+}
+
+.escondido{
+    display: none;
+}
